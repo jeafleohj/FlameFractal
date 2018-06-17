@@ -1,1 +1,1 @@
-# Fractal Flame Algorithm
+# Flame Fractal
