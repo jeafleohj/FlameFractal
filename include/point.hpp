@@ -17,8 +17,11 @@ class Point{
 	T getZ();
 	Point<T> operator+(const Point<T>&)const;
 	Point<T> operator-(const Point<T>&)const;
+	Point<T> operator/(const double&)const;
+	Point<T> operator*(const double&)const;
 	bool operator!=(const Point<T> &)const;
 	Point<T>& operator=(const Point<T>&);
+	void render();
 	friend std::ostream &operator<<(std::ostream& os, const Point<T>&p){
 		os<<p.x<<" "<<p.y<<" "<<p.z;
 		return os;  
@@ -72,8 +75,29 @@ Point<T> Point<T>::operator-(const Point<T>& b)const{
 }
 
 template<typename T>
+Point<T> Point<T>::operator/(const double& a)const{
+	Point<T> r(x/a,y/a,z/a);
+	return r;
+}
+
+template<typename T>
+Point<T> Point<T>::operator*(const double& a)const{
+	Point<T> r(x*a,y*a,z*a);
+	return r;
+}
+template<typename T>
+Point<T> operator* (double a, Point<T> p) {
+    return p*a;
+}
+
+template<typename T>
 bool Point<T>::operator!=(const Point<T> &b) const{
 	return (x!=b.x)&&(y!=b.y)&&(z!=b.z);
+}
+
+template<typename T>
+void Point<T>::render(){
+	glVertex3f(x, y, z);
 }
 
 template<typename T>

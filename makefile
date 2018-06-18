@@ -10,7 +10,7 @@ TESTOBJ=$(patsubst $(SRCDIR)/%,$(TEST)/%,$(SRCFILES:.cpp=.o))
 FLAGS = -DRULE1
 FLAGS2 = -DRULE2
 #LIBS = $(shell pkg-config --cflags --libs Qt6Widgets) -fPIC
-LIBS = 
+LIBS = -lGL -lGLU -lGLEW -lglfw 
 CC = g++
 INC = -I include
 

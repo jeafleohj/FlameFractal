@@ -15,6 +15,10 @@ class Fractal{
 
 public:
 	Fractal(std::vector< std::pair<Point<GLfloat> (*)(Point<GLfloat>) , Point<GLfloat>> > funciones, std::vector<Point<GLfloat>> points);
+	//Se generata puntos iniciales aleatorios
+	Fractal(std::vector< std::pair<Point<GLfloat> (*)(Point<GLfloat>) , Point<GLfloat>> > functions );
+	//Colores random y puntos iniciales random
+	Fractal(std::vector< Point<GLfloat> (*)(Point<GLfloat>) > functions );
 	void render(int iteraciones);
 };
 #endif
