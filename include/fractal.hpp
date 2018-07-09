@@ -9,16 +9,17 @@ class Fractal{
 	//IFS funciones
 	//Cada funcion tendra un color asociado
 	std::vector< std::pair<Point<GLfloat> (*)(Point<GLfloat>), Point<GLfloat>> > functions;
+	std::vector< Point<GLfloat> (*)(Point<GLfloat>) > variations;	
 	//Initial points
 	std::vector<Point<GLfloat>> points;
-	void nextIteration();
+	void nextIteration(Point<GLfloat>&);
 
 public:
 	Fractal(std::vector< std::pair<Point<GLfloat> (*)(Point<GLfloat>) , Point<GLfloat>> > funciones, std::vector<Point<GLfloat>> points);
 	//Se generata puntos iniciales aleatorios
 	Fractal(std::vector< std::pair<Point<GLfloat> (*)(Point<GLfloat>) , Point<GLfloat>> > functions );
 	//Colores random y puntos iniciales random
-	Fractal(std::vector< Point<GLfloat> (*)(Point<GLfloat>) > functions );
+	Fractal(std::vector< Point<GLfloat> (*)(Point<GLfloat>) > functions, std::vector< Point<GLfloat> (*)(Point<GLfloat>) > variaciones);
 	void render(int iteraciones);
 };
 #endif
