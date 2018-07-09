@@ -12,7 +12,7 @@ class Point{
 	void setY(T);
 	void setZ(T);
 	void setPoint(T,T,T);
-	T getX();z
+	T getX();
 	T getY();
 	T getZ();
 	Point<T> operator+(const Point<T>&)const;
